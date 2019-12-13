@@ -1,5 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    about
+    <img src="@/assets/android-chrome-512x512.png" />
   </div>
 </template>
