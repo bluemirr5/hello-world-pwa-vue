@@ -38,3 +38,18 @@ workbox.routing.registerRoute(
     ]
   })
 )
+
+self.addEventListener('message', function (event) {
+  const data = event.data
+
+  if (data.command === 'oneWayCommunication') {
+    event.waitUntil(new Promise(function (resolve, reject) {
+      setTimeout(() => {
+        self.registration.showNotification('ServiceWorker Cookbook', {
+          body: 'hello this is notification'
+        })
+        resolve()
+      }, 3000)
+    }))
+  }
+})
